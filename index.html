@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJ App — Vive la leyenda del Rey del Pop</title>
+<meta name="description" content="MJ App: la plataforma móvil gamificada para emular coreografías, poner a prueba tu conocimiento musical y recorrer las eras de Michael Jackson. Gratis, sin suscripciones.">
+<link rel="icon" href="https://identidad-de-marca-delta.vercel.app/assets/LogoMJ.png" alt="Logo MJ App" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a href="#top" class="brand">
+      <img src="https://identidad-de-marca-delta.vercel.app/assets/LogoMJ.png" alt="Logo MJ App" class="brand__mark">
+      <span>MJ App</span>
+    </a>
+    <a href="#form" class="btn btn--ghost btn--small">Descargar gratis</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HEADLINE + SUBTÍTULO + ELEMENTO VISUAL -->
+  <section class="hero wrap">
+    <div class="hero__text">
+      <p class="eyebrow">Plataforma móvil oficial</p>
+      <h1 class="hero__headline">El Rey del Pop cabe en tu bolsillo.</h1>
+      <p class="hero__subtitle">
+        MJ App es la experiencia interactiva para emular sus coreografías, poner a prueba
+        tu conocimiento musical y recorrer las cinco eras de Michael Jackson, desde
+        Off The Wall hasta HIStory. Descárgala gratis: sin suscripciones ni pagos recurrentes.
+      </p>
+      <div class="hero__actions">
+        <a href="#form" class="btn btn--primary">Descargar MJ App</a>
+        <a href="#beneficios" class="btn btn--text">Ver qué incluye ↓</a>
+      </div>
+      <dl class="hero__stats">
+        <div><dt>5</dt><dd>eras musicales</dd></div>
+        <div><dt>100%</dt><dd>gratis, sin cuotas</dd></div>
+        <div><dt>4.8</dt><dd>valoración media</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <img src="https://identidad-de-marca-delta.vercel.app/assets/Michael_Live.png" alt="Michael Jackson en escenario, claroscuro" class="hero__image">
+      <div class="hero__card">
+        <span class="hero__card-label">Trivia en vivo</span>
+        <p>¿Qué productor coprodujo el álbum <em>Dangerous</em>?</p>
+        <div class="hero__card-options">
+          <span>Teddy Riley</span>
+          <span>Quincy Jones</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS CLAVE -->
+  <section id="beneficios" class="benefits wrap">
+    <div class="section-head">
+      <h2>Todo lo que trae la app</h2>
+      <p>Cuatro formas de vivir el legado, construidas para el teléfono, no para el navegador.</p>
+    </div>
+
+    <div class="benefits__grid">
+      <article class="b-card b-card--feature">
+        <h3>Simulador de coreografía</h3>
+        <p>Sigue el Moonwalk y los pasos del Smooth Criminal con guías de movimiento pensadas
+          para practicar desde la pantalla de tu celular, a tu ritmo.</p>
+      </article>
+      <article class="b-card">
+        <h3>Trivia por eras</h3>
+        <p>Preguntas sobre Off The Wall, Thriller, Bad, Dangerous e HIStory que suben de
+          nivel según lo que ya sabes.</p>
+      </article>
+      <article class="b-card">
+        <h3>Sin suscripciones</h3>
+        <p>La app se descarga gratis y se usa gratis. No hay planes mensuales ni cobros
+          automáticos escondidos.</p>
+      </article>
+      <article class="b-card">
+        <h3>Colección de vinilos</h3>
+        <p>Desbloquea piezas coleccionables de cada era mientras avanzas y compáralas
+          con otros fans de la comunidad.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="form" class="form-section">
+    <div class="wrap form-section__inner">
+      <div class="form-copy">
+        <p class="eyebrow">Recíbela en tu teléfono</p>
+        <h2>Te mandamos el enlace de descarga</h2>
+        <p>Déjanos tu correo y te enviamos el acceso directo a MJ App para iOS o Android.
+          Ninguna tarjeta, ningún compromiso.</p>
+      </div>
+
+      <form class="download-form" action="#" method="post">
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+        <div class="field field--radio">
+          <span class="field__label">Tu teléfono usa</span>
+          <label><input type="radio" name="os" value="ios" checked> iPhone (iOS)</label>
+          <label><input type="radio" name="os" value="android"> Android</label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Enviarme el enlace</button>
+        <p class="form-note">Gratis para siempre. Sin suscripción, sin letras pequeñas.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap cta__inner">
+      <h2>Empieza a jugar hoy mismo</h2>
+      <p>Disponible ahora en App Store y Google Play.</p>
+      <div class="cta__stores">
+        <a href="#" class="store-badge">
+          <span class="store-badge__eyebrow">Descárgala en</span>
+          <span class="store-badge__name">App Store</span>
+        </a>
+        <a href="#" class="store-badge">
+          <span class="store-badge__eyebrow">Disponible en</span>
+          <span class="store-badge__name">Google Play</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRUEBA SOCIAL -->
+  <section class="social-proof wrap">
+    <div class="section-head">
+      <h2>Fans en todas las eras la están jugando</h2>
+    </div>
+
+    <div class="social-proof__grid">
+      <blockquote class="quote">
+        <p>“Practico el Anti-Gravity Lean con el simulador desde hace un mes. Es la
+          primera app que hace justicia a su forma de moverse.”</p>
+        <cite>— Reseña de usuaria, Android</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“La trivia de la era Thriller me tuvo pegado media tarde. Nada de compras
+          dentro de la app para seguir jugando.”</p>
+        <cite>— Reseña de usuario, iOS</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“Como coleccionista, la sección de vinilos gamificados es un antojo. Se
+          siente hecha por gente que conoce el legado.”</p>
+        <cite>— Reseña de usuaria, Android</cite>
+      </blockquote>
+    </div>
+
+    <div class="social-proof__bar">
+      <div><strong>4.8/5</strong><span>valoración en tiendas</span></div>
+      <div><strong>500K+</strong><span>descargas</span></div>
+      <div><strong>AAA</strong><span>contraste accesible</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>MJ App © 2026 — The Living Legacy Gamified Platform</span>
+    <span>Aplicación no oficial de fans. Gratuita, sin suscripción.</span>
+  </div>
+</footer>
+
+</body>
+</html>
