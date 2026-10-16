@@ -13,49 +13,39 @@
 </head>
 <body>
 
-<header class="topbar">
-  <div class="wrap topbar__inner">
+<header class="header">
+  <div class="header__bar">
     <a href="#top" class="brand">
       <img src="https://identidad-de-marca-delta.vercel.app/assets/LogoMJ.png" alt="Logo MJ App" class="brand__mark">
       <span>MJ App</span>
     </a>
-    <a href="#form" class="btn btn--ghost btn--small">Descargar gratis</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#beneficios">Beneficios</a>
+      <a href="#form">Descargar</a>
+      <a href="#Opiniones">Opiniones</a>
+    </nav>
+    <a href="#form" class="btn btn--primary btn--small">Descargar gratis</a>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HEADLINE + SUBTÍTULO + ELEMENTO VISUAL -->
-  <section class="hero wrap">
-    <div class="hero__text">
-      <p class="eyebrow">Plataforma móvil oficial</p>
+  <!-- HERO CON VIDEO DE FONDO -->
+  <section class="hero">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/MJvid.mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
       <h1 class="hero__headline">El Rey del Pop cabe en tu bolsillo.</h1>
       <p class="hero__subtitle">
-        MJ App es la experiencia interactiva para emular sus coreografías, poner a prueba
-        tu conocimiento musical y recorrer las cinco eras de Michael Jackson, desde
-        Off The Wall hasta HIStory. Descárgala gratis: sin suscripciones ni pagos recurrentes.
+        Emula sus coreografías, pon a prueba tu conocimiento musical y recorre las cinco
+        eras de Michael Jackson, desde Off The Wall hasta HIStory.
       </p>
       <div class="hero__actions">
         <a href="#form" class="btn btn--primary">Descargar MJ App</a>
-        <a href="#beneficios" class="btn btn--text">Ver qué incluye ↓</a>
-      </div>
-      <dl class="hero__stats">
-        <div><dt>5</dt><dd>eras musicales</dd></div>
-        <div><dt>100%</dt><dd>gratis, sin cuotas</dd></div>
-        <div><dt>4.8</dt><dd>valoración media</dd></div>
-      </dl>
-    </div>
-
-    <div class="hero__visual">
-      <div class="hero__glow" aria-hidden="true"></div>
-      <img src="https://identidad-de-marca-delta.vercel.app/assets/Michael_Live.png" alt="Michael Jackson en escenario, claroscuro" class="hero__image">
-      <div class="hero__card">
-        <span class="hero__card-label">Trivia en vivo</span>
-        <p>¿Qué productor coprodujo el álbum <em>Dangerous</em>?</p>
-        <div class="hero__card-options">
-          <span>Teddy Riley</span>
-          <span>Quincy Jones</span>
-        </div>
+        <a href="#form" class="btn btn--ghost">Registrarse</a>
       </div>
     </div>
   </section>
@@ -64,35 +54,55 @@
   <section id="beneficios" class="benefits wrap">
     <div class="section-head">
       <h2>Todo lo que trae la app</h2>
-      <p>Cuatro formas de vivir el legado, construidas para el teléfono, no para el navegador.</p>
+      <p>Cuatro formas de vivir el legado, construidas para tu teléfono.</p>
     </div>
 
     <div class="benefits__grid">
       <article class="b-card b-card--feature">
-        <h3>Simulador de coreografía</h3>
-        <p>Sigue el Moonwalk y los pasos del Smooth Criminal con guías de movimiento pensadas
-          para practicar desde la pantalla de tu celular, a tu ritmo.</p>
+        <div class="b-card__media">
+          <img src="assets/TheLean.jfif" alt="Simulador de coreografía" loading="lazy">
+        </div>
+        <div class="b-card__body">
+          <h3>Simulador de Vida</h3>
+          <p>Construye tu propia historia dependiendoas desiciones que tomes desde los zapatos de El Rey del Pop.</p>
+        </div>
       </article>
+
       <article class="b-card">
-        <h3>Trivia por eras</h3>
-        <p>Preguntas sobre Off The Wall, Thriller, Bad, Dangerous e HIStory que suben de
-          nivel según lo que ya sabes.</p>
+        <div class="b-card__media">
+          <img src="assets/ErasMJ.jpg" alt="Trivia por eras" loading="lazy">
+        </div>
+        <div class="b-card__body">
+          <h3>Comparaciones Unicas</h3>
+          <p>Compara tus resultados con tus amigos y conocelos mejor segun el resultado que obtengan.</p>
+        </div>
       </article>
+
+      <article class="b-card b-card--tall">
+  <div class="b-card__media">
+    <img src="assets/GuanteMJ.jfif" alt="Sin suscripciones" loading="lazy">
+  </div>
+  <div class="b-card__body">
+    <h3>Sin suscripciones</h3>
+    <p>La app se descarga gratis y se usa gratis. No hay planes mensuales ni cobros
+      automáticos escondidos.</p>
+  </div>
+</article>
+
       <article class="b-card">
-        <h3>Sin suscripciones</h3>
-        <p>La app se descarga gratis y se usa gratis. No hay planes mensuales ni cobros
-          automáticos escondidos.</p>
-      </article>
-      <article class="b-card">
-        <h3>Colección de vinilos</h3>
-        <p>Desbloquea piezas coleccionables de cada era mientras avanzas y compáralas
-          con otros fans de la comunidad.</p>
+        <div class="b-card__media">
+          <img src="assets/PuntasMJ.jpg" alt="Colección de vinilos" loading="lazy">
+        </div>
+        <div class="b-card__body">
+          <h3>Pasos Iconicos</h3>
+          <p>Prueba tu conocimiento de la famosa presentacion de MJ de Billie Jean en los Grammys.</p>
+        </div>
       </article>
     </div>
   </section>
 
   <!-- FORMULARIO -->
-  <section id="form" class="form-section">
+  <section id="form" class="form-section form-section--black">
     <div class="wrap form-section__inner">
       <div class="form-copy">
         <p class="eyebrow">Recíbela en tu teléfono</p>
@@ -103,59 +113,130 @@
 
       <form class="download-form" action="#" method="post">
         <div class="field">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="field">
           <label for="email">Correo electrónico</label>
           <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+        <div class="field">
+          <label for="password">Crear contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+        </div>
+        <div class="field">
+          <label for="telefono">Número de teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" required>
         </div>
         <div class="field field--radio">
           <span class="field__label">Tu teléfono usa</span>
           <label><input type="radio" name="os" value="ios" checked> iPhone (iOS)</label>
           <label><input type="radio" name="os" value="android"> Android</label>
         </div>
-        <button type="submit" class="btn btn--primary btn--full">Enviarme el enlace</button>
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary">Enviarme el enlace</button>
+          <button type="submit" class="btn btn--ghost">Registrarme</button>
+        </div>
         <p class="form-note">Gratis para siempre. Sin suscripción, sin letras pequeñas.</p>
       </form>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="wrap cta__inner">
-      <h2>Empieza a jugar hoy mismo</h2>
-      <p>Disponible ahora en App Store y Google Play.</p>
-      <div class="cta__stores">
-        <a href="#" class="store-badge">
-          <span class="store-badge__eyebrow">Descárgala en</span>
-          <span class="store-badge__name">App Store</span>
-        </a>
-        <a href="#" class="store-badge">
-          <span class="store-badge__eyebrow">Disponible en</span>
-          <span class="store-badge__name">Google Play</span>
-        </a>
+<section id="explicacion" class="explain wrap">
+    <p class="eyebrow">Explicación</p>
+    <h2 class="explain__title">Aprende, baila y diviertete desde tu celular</h2>
+
+    <div class="explain__layout">
+      <div class="accordion" data-accordion>
+
+        <div class="acc-item is-open">
+          <h3 class="acc-item__heading">
+            <button type="button" class="acc-item__trigger" id="acc-btn-1" aria-expanded="true" aria-controls="acc-panel-1" data-index="0">
+              <span>Aprende con las desiciones que tomes</span>
+              <svg class="acc-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="acc-item__panel" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1">
+            <div class="acc-item__panel-inner">
+              <p>La App tiene una secuencia de desiciones de las cuales MJ se enfrento en su vida y tu las tomaras desde la perspectiva de el, las desiciones tienen un peso en el resultado final que obtengas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <h3 class="acc-item__heading">
+            <button type="button" class="acc-item__trigger" id="acc-btn-2" aria-expanded="false" aria-controls="acc-panel-2" data-index="1">
+              <span>Para los Coleccionistas</span>
+              <svg class="acc-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="acc-item__panel" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2">
+            <div class="acc-item__panel-inner">
+              <p>Para aquellas personas que les gusta tener la experiencia de todo tipo de contenido completo, la app ofrece la opcion de reiniciar la toma de desiciones para poder terminar con los todos los finales que creamos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <h3 class="acc-item__heading">
+            <button type="button" class="acc-item__trigger" id="acc-btn-3" aria-expanded="false" aria-controls="acc-panel-3" data-index="2">
+              <span>La seccion de Billie Jean</span>
+              <svg class="acc-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="acc-item__panel" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3">
+            <div class="acc-item__panel-inner">
+              <p>Nuestra otra gran sección es una trivia sobre los pasos de MJ mas iconicos durante la presentacion en vivo de su canción Billie Jean de 1983 en los Premios Grammys.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <h3 class="acc-item__heading">
+            <button type="button" class="acc-item__trigger" id="acc-btn-4" aria-expanded="false" aria-controls="acc-panel-4" data-index="3">
+              <span>Juega gratis, sin sorpresas</span>
+              <svg class="acc-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </h3>
+          <div class="acc-item__panel" id="acc-panel-4" role="region" aria-labelledby="acc-btn-4">
+            <div class="acc-item__panel-inner">
+              <p>Descargas la app y la usas completa, sin suscripción ni cobros recurrentes. Solo necesitas tu teléfono y ganas de bailar.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="explain__media">
+        <img src="assets/Decisiones MJ.jpg" alt="Trivia por eras" class="explain__img is-active" loading="lazy">
+        <img src="assets/ColeccionMJ.jfif" alt="Coreografías" class="explain__img" loading="lazy">
+        <img src="assets/BillieJean.jpg" alt="Colección" class="explain__img" loading="lazy">
+        <img src="assets/MJestudio.jfif" alt="Gratis" class="explain__img" loading="lazy">
       </div>
     </div>
   </section>
 
+
   <!-- PRUEBA SOCIAL -->
-  <section class="social-proof wrap">
+  <section id="Opiniones"class="social-proof wrap">
     <div class="section-head">
       <h2>Fans en todas las eras la están jugando</h2>
     </div>
 
     <div class="social-proof__grid">
       <blockquote class="quote">
-        <p>“Practico el Anti-Gravity Lean con el simulador desde hace un mes. Es la
+        <p>“Practico el Moonwalk con el video desde hace un mes. Es la
           primera app que hace justicia a su forma de moverse.”</p>
-        <cite>— Reseña de usuaria, Android</cite>
+        <cite>— Manuela Castaño, usuaria Android</cite>
       </blockquote>
       <blockquote class="quote">
         <p>“La trivia de la era Thriller me tuvo pegado media tarde. Nada de compras
-          dentro de la app para seguir jugando.”</p>
-        <cite>— Reseña de usuario, iOS</cite>
+          dentro de la app para seguir jugando”</p>
+        <cite>— Alvaro Rodriguez, usuario iOS</cite>
       </blockquote>
       <blockquote class="quote">
-        <p>“Como coleccionista, la sección de vinilos gamificados es un antojo. Se
-          siente hecha por gente que conoce el legado.”</p>
-        <cite>— Reseña de usuaria, Android</cite>
+        <p>“Con mis amigos tuvimos un alarga charla de los resultados de cada uno, fue una tarde entretenida para todo mi grupo, satisfecho con la app”</p>
+        <cite>— Catalina Sanchez, usuaria Android</cite>
       </blockquote>
     </div>
 
@@ -166,6 +247,142 @@
     </div>
   </section>
 
+    <!-- REGISTRO RÁPIDO (CTA con imagen de fondo) -->
+  <section id="registro" class="signup">
+    <div class="wrap signup__inner">
+      <div class="signup__panel">
+        <h2 class="signup__title">Súbete al <span>escenario.</span></h2>
+        <p class="signup__lead">Crea tu cuenta en segundos y empieza a jugar hoy mismo.</p>
+
+        <form class="download-form" action="#" method="post">
+          <div class="field">
+            <label for="registro-email">Correo electrónico</label>
+            <input type="email" id="registro-email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="field">
+            <label for="registro-telefono">Número de teléfono</label>
+            <input type="tel" id="registro-telefono" name="telefono" placeholder="+57 300 000 0000" required>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Registrarse</button>
+          <p class="form-note">Gratis para siempre. Sin suscripción, sin letras pequeñas.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+    <!-- FAQ -->
+  <section id="faq" class="faq wrap">
+    <h2 class="faq__title">Preguntas frecuentes</h2>
+
+    <div class="faq__list" data-faq>
+
+      <div class="faq-item">
+        <h3 class="faq-item__heading">
+          <button type="button" class="faq-item__trigger" id="faq-btn-1" aria-expanded="false" aria-controls="faq-panel-1">
+            <span>¿MJ App es realmente gratis?</span>
+            <svg class="faq-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </h3>
+        <div class="faq-item__panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+          <div class="faq-item__panel-inner">
+            <p>Sí. La descargas y usas la app completa sin pagar nada, y no existe ninguna suscripción ni cobro recurrente.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-item__heading">
+          <button type="button" class="faq-item__trigger" id="faq-btn-2" aria-expanded="false" aria-controls="faq-panel-2">
+            <span>¿En qué teléfonos funciona?</span>
+            <svg class="faq-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </h3>
+        <div class="faq-item__panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+          <div class="faq-item__panel-inner">
+            <p>Está pensada para celulares con iPhone (iOS) y Android. Déjanos tu correo en el formulario y te enviamos el enlace de descarga para tu sistema.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-item__heading">
+          <button type="button" class="faq-item__trigger" id="faq-btn-3" aria-expanded="false" aria-controls="faq-panel-3">
+            <span>¿Necesito saber bailar para seguir el ritmo?</span>
+            <svg class="faq-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </h3>
+        <div class="faq-item__panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+          <div class="faq-item__panel-inner">
+            <p>No. Al tener un video implementado en la sección de Billie Jean puedes repetir las veces que necesites tus pasos favoritos para asi perfccionarlos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-item__heading">
+          <button type="button" class="faq-item__trigger" id="faq-btn-4" aria-expanded="false" aria-controls="faq-panel-4">
+            <span>¿Debo saber la historia completa de MJ?</span>
+            <svg class="faq-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </h3>
+        <div class="faq-item__panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
+          <div class="faq-item__panel-inner">
+            <p>No hace falta ya que la aplicación te guía sin importar si sabes toda la historia del Rey del Pop o no.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-item__heading">
+          <button type="button" class="faq-item__trigger" id="faq-btn-5" aria-expanded="false" aria-controls="faq-panel-5">
+            <span>¿Cómo creo mi cuenta?</span>
+            <svg class="faq-item__icon" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </h3>
+        <div class="faq-item__panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
+          <div class="faq-item__panel-inner">
+            <p>Solo necesitas tu correo y tu número de teléfono. Rellena el formulario de registro, descarga la app desde App Store o Google Play y empieza a jugar.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PREFOOTER -->
+<section class="prefooter" aria-label="Navegación del sitio">
+  <div class="wrap prefooter__inner">
+
+    <div class="prefooter__brand">
+      <a href="#top" class="brand">
+        <img src="https://identidad-de-marca-delta.vercel.app/assets/LogoMJ.png" alt="Logo MJ App" class="brand__mark">
+        <span>MJ APP</span>
+      </a>
+      <a href="#registro" class="prefooter__contact">Contáctanos</a>
+    </div>
+
+    <nav class="prefooter__nav" aria-label="Secciones de la página">
+      <a href="#top">Home</a>
+      <a href="#Opiniones">Clientes</a>
+      <a href="#form">Registro</a>
+      <a href="#explicacion">Sobre Nosotros</a>
+    </nav>
+
+    <div class="prefooter__social" aria-label="Redes sociales">
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="#" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
@@ -174,6 +391,50 @@
     <span>Aplicación no oficial de fans. Gratuita, sin suscripción.</span>
   </div>
 </footer>
+<script>
+  (function () {
+    var root = document.querySelector('[data-accordion]');
+    if (!root) return;
+    var items = root.querySelectorAll('.acc-item');
+    var images = document.querySelectorAll('.explain__img');
 
+    function open(index) {
+      items.forEach(function (item, i) {
+        var isTarget = i === index;
+        item.classList.toggle('is-open', isTarget);
+        item.querySelector('.acc-item__trigger').setAttribute('aria-expanded', isTarget);
+      });
+      images.forEach(function (img, i) {
+        img.classList.toggle('is-active', i === index);
+      });
+    }
+
+    root.querySelectorAll('.acc-item__trigger').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var index = Number(btn.dataset.index);
+        var item = items[index];
+        if (item.classList.contains('is-open')) {
+          item.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          open(index);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  (function () {
+    var list = document.querySelector('[data-faq]');
+    if (!list) return;
+    list.querySelectorAll('.faq-item__trigger').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var open = item.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open);
+      });
+    });
+  })();
+</script>
 </body>
 </html>
