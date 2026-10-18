@@ -1,11 +1,11 @@
 /* ---------- Tokens ---------- */
 :root{
-  --onyx: #070709;
+  --onyx: rgb(7, 7, 9);
   --surface: #14151C;
   --surface-2: #1B1D28;
-  --gold: #E5A93C;
+  --gold: rgb(229, 169, 60);
   --crimson: #D11E1E;
-  --white: #FFFFFF;
+  --white: rgb(255, 255, 255);
   --silver: #9DA2B6;
 
   --font-display: "Syne", system-ui, sans-serif;
