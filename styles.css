@@ -27,8 +27,19 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
+/* Mantiene la proporción nativa fluida en dispositivos móviles */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-img{max-width:100%;display:block;}
+/* Recorta los bordes limpiamente en contenedores de tamaño fijo */
+.b-card__media img,
+.explain__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .wrap{
   max-width:var(--wrap);
