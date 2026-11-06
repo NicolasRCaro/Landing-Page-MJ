@@ -602,42 +602,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   });
 </script>
-<!-- Carga eficiente por interacción para no bloquear el hilo principal -->
-</script>
-<!-- Carga eficiente por interacción para no bloquear el hilo principal -->
-  <script>
-    (function() {
-      var loaded = false;
-
-      function loadThirdParty() {
-        if (loaded) return;
-        loaded = true;
-
-        // 1. Cargar Cookiebot
-        var cb = document.createElement('script');
-        cb.id = 'Cookiebot';
-        cb.src = 'https://consent.cookiebot.com/uc.js';
-        cb.setAttribute('data-cbid', '316ff206-33be-48ad-8749-9dde6a792495');
-        cb.setAttribute('data-blockingmode', 'auto');
-        document.head.appendChild(cb);
-
-        // 2. Cargar ContentSquare
-        var cs = document.createElement('script');
-        cs.src = 'https://t.contentsquare.net/uxa/4041b057ff5e7.js';
-        cs.defer = true;
-        document.head.appendChild(cs);
-      }
-
-      // Activar al primer toque, scroll, movimiento de mouse o tecla
-      var events = ['touchstart', 'scroll', 'mousemove', 'keydown'];
-      events.forEach(function(evt) {
-        window.addEventListener(evt, loadThirdParty, { once: true, passive: true });
-      });
-
-      // Si el usuario no interactúa, cargar pasados 4 segundos
-      setTimeout(loadThirdParty, 1500);
-    })();
-  </script>
 </body>
 
 </body>
