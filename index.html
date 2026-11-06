@@ -32,9 +32,14 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-NLJKCZNT');</script>
 
-  <!-- 4. Scripts externos con atributo DEFER (Evitan el bloqueo del renderizado inicial) -->
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="316ff206-33be-48ad-8749-9dde6a792495" data-blockingmode="auto" type="text/javascript" defer></script>
-  <script defer src="https://t.contentsquare.net/uxa/4041b057ff5e7.js"></script>
+<!-- 1. Conexión anticipada (Preconnect) para acelerar la descarga -->
+<link rel="preconnect" href="https://consent.cookiebot.com" crossorigin>
+<link rel="preconnect" href="https://consentcdn.cookiebot.com" crossorigin>
+<link rel="preconnect" href="https://t.contentsquare.net" crossorigin>
+
+<!-- 2. Carga asíncrona inmediata (No bloquea el HTML mientras descarga) -->
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="316ff206-33be-48ad-8749-9dde6a792495" data-blockingmode="auto" type="text/javascript" async></script>
+<script src="https://t.contentsquare.net/uxa/4041b057ff5e7.js" async></script>
   <!-- Datos Estructurados (Schema.org / JSON-LD) -->
 <script type="application/ld+json">
 {
