@@ -1,0 +1,313 @@
+/* ---------- Tokens ---------- */
+:root{
+  --onyx: #070709;
+  --surface: #14151C;
+  --surface-2: #1B1D28;
+  --gold: #E5A93C;
+  --white: #FFFFFF;
+  --silver: #9DA2B6;
+
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+*{box-sizing:border-box;}
+
+html,body{
+  margin:0;
+  min-height:100%;
+}
+
+body{
+  background:var(--onyx);
+  color:var(--white);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,p{margin:0;}
+
+:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+
+/* ---------- Escenario ---------- */
+.stage{
+  position:relative;
+  min-height:100vh;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  padding:32px 20px;
+  overflow:hidden;
+}
+.stage__glow{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 28%, rgba(229,169,60,0.22), transparent 70%),
+    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(229,169,60,0.08), transparent 70%);
+  pointer-events:none;
+  animation:glow-in 1.4s ease-out both;
+}
+@keyframes glow-in{
+  from{opacity:0;transform:scale(.92);}
+  to{opacity:1;transform:scale(1);}
+}
+
+/* ---------- Tarjeta ---------- */
+.card{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:560px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  animation:rise .8s var(--ease) both;
+}
+@keyframes rise{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:none;}
+}
+
+.card__logo{
+  width:72px;
+  height:72px;
+  object-fit:contain;
+  margin-bottom:28px;
+}
+
+.card__title{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(2.6rem, 8vw, 4.4rem);
+  line-height:1.02;
+  margin-bottom:16px;
+  text-shadow:0 2px 30px rgba(0,0,0,0.5);
+}
+.card__title span{color:var(--gold);}
+
+.card__slogan{
+  font-size:clamp(1rem, 2.6vw, 1.2rem);
+  color:rgba(255,255,255,0.82);
+  margin-bottom:40px;
+  max-width:34ch;
+}
+
+/* ---------- Formulario ---------- */
+.form{
+  width:100%;
+  text-align:left;
+}
+.form__group{
+  margin-bottom:16px;
+}
+.form__label{
+  display:block;
+  font-size:0.85rem;
+  font-weight:600;
+  color:var(--silver);
+  margin-bottom:8px;
+  padding-left:6px;
+}
+.form__row{
+  display:flex;
+  gap:10px;
+  padding:8px;
+  background:rgba(20,21,28,0.75);
+  border:1px solid rgba(229,169,60,0.4);
+  border-radius:999px;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  transition:border-color .3s ease, box-shadow .4s var(--ease);
+}
+.form__row:focus-within{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(229,169,60,0.15), 0 16px 50px -16px rgba(229,169,60,0.35);
+}
+
+/* Aplicado a cualquier tipo de input del formulario */
+.form input[type="text"],
+.form input[type="email"]{
+  flex:1;
+  min-width:0;
+  padding:14px 20px;
+  background:transparent;
+  border:0;
+  color:var(--white);
+  font-family:var(--font-body);
+  font-size:1rem;
+}
+.form input[type="text"]::placeholder,
+.form input[type="email"]::placeholder{color:rgba(157,162,182,0.65);}
+.form input[type="text"]:focus,
+.form input[type="email"]:focus{outline:none;}
+
+/* Corrección de fondo al usar autocompletado en navegadores */
+.form input:-webkit-autofill,
+.form input:-webkit-autofill:hover, 
+.form input:-webkit-autofill:focus{
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px #14151C inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form__button{
+  flex:none;
+  padding:14px 32px;
+  background:var(--gold);
+  color:var(--onyx);
+  border:0;
+  border-radius:999px;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:transform .15s ease, background .2s ease, opacity .2s ease;
+}
+.form__button:hover{
+  background:#f0b850;
+  transform:translateY(-2px);
+}
+.form__button:active{transform:translateY(0);}
+.form__button:disabled{
+  opacity:.6;
+  cursor:wait;
+  transform:none;
+}
+
+.form__note{
+  margin-top:20px;
+  text-align:center;
+  font-size:0.82rem;
+  color:var(--silver);
+}
+
+/* ---------- Pantalla de éxito (Transición de revelado) ---------- */
+.success{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:var(--onyx);
+  opacity:0;
+  visibility:hidden;
+  overflow:hidden;
+  clip-path: inset(0 0 0 100%);
+}
+
+.is-sent .success{
+  opacity:1;
+  visibility:visible;
+  animation: moonwalk-reveal 2.5s linear forwards;
+}
+
+.success__gif{
+  position:absolute;
+  bottom:10%;
+  left:100%;
+  height:360px;
+  width:auto;
+  object-fit:contain;
+  pointer-events:none;
+  z-index:10;
+}
+
+.is-sent .success__gif{
+  animation: moonwalk-left 2.5s linear forwards;
+}
+
+@keyframes moonwalk-reveal{
+  0%{ clip-path: inset(0 0 0 100%); }
+  100%{ clip-path: inset(0 0 0 0%); }
+}
+
+@keyframes moonwalk-left{
+  0%{ transform: translateX(0); }
+  100%{ transform: translateX(calc(-100vw - 400px)); }
+}
+
+.success__shade{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse at center, rgba(7,7,9,0.5) 0%, rgba(7,7,9,0.85) 100%);
+  z-index:1;
+}
+
+.success__content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  max-width:560px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.success__badge{
+  display:inline-block;
+  padding:6px 18px;
+  margin-bottom:24px;
+  background:var(--gold);
+  color:var(--onyx);
+  border-radius:999px;
+  font-size:0.85rem;
+  font-weight:700;
+}
+.success__title{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(2.4rem, 8vw, 4.2rem);
+  line-height:1.05;
+  margin-bottom:18px;
+  text-shadow:0 2px 30px rgba(0,0,0,0.6);
+}
+.success__text{
+  font-size:clamp(1rem, 2.6vw, 1.2rem);
+  color:rgba(255,255,255,0.9);
+  text-shadow:0 1px 16px rgba(0,0,0,0.7);
+}
+.success__text strong{color:var(--gold);}
+
+/* Adaptación a dispositivos móviles */
+@media (max-width: 520px){
+  .form__row{
+    flex-direction:column;
+    border-radius:22px;
+    padding:10px;
+  }
+  .form input[type="text"],
+  .form input[type="email"]{
+    text-align:center;
+    padding:14px 12px;
+  }
+  .form__button{width:100%;}
+  .card__logo{width:60px;height:60px;margin-bottom:22px;}
+  .success__gif{height:240px; bottom:12%;}
+}
+
+/* Movimiento reducido */
+@media (prefers-reduced-motion: reduce){
+  .stage__glow,
+  .card,
+  .success,
+  .form__row,
+  .form__button,
+  .success__gif{
+    animation:none;
+    transition:none;
+  }
+  .is-sent .success{
+    clip-path:none;
+    opacity:1;
+    visibility:visible;
+  }
+}

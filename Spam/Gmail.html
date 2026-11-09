@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MJ App — Recibe tu acceso por correo</title>
+  <meta name="description" content="Deja tu correo y recibe gratis el acceso a MJ App, el simulador donde tomas las decisiones de Michael Jackson.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Precarga del GIF -->
+  <link rel="preload" as="image" href="Moonwalk.gif">
+
+  <link rel="stylesheet" href="./Gmail.css">
+
+  <!-- Carga del SDK v4 oficial de EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <main class="stage">
+    <div class="stage__glow" aria-hidden="true"></div>
+
+    <section class="card">
+      <img
+        src="https://identidad-de-marca-delta.vercel.app/assets/LogoMJ.png"
+        alt="Logo MJ App"
+        class="card__logo"
+      >
+
+      <h1 class="card__title">Entra a la <span>leyenda.</span></h1>
+      <p class="card__slogan">Toma sus decisiones. Vive su historia.</p>
+
+<form id="email-form" class="form">
+  <!-- Campo Nombre -->
+  <div class="form__group">
+    <label for="user_name" class="form__label">Nombre completo</label>
+    <div class="form__row">
+      <input
+        type="text"
+        id="user_name"
+        name="user_name"
+        placeholder="Tu nombre"
+        autocomplete="name"
+        required
+      >
+    </div>
+  </div>
+
+  <!-- Campo Correo + Botón -->
+  <div class="form__group">
+    <label for="user_email" class="form__label">Correo electrónico</label>
+    <div class="form__row">
+      <input
+        type="email"
+        id="user_email"
+        name="user_email"
+        placeholder="ejemplo@correo.com"
+        autocomplete="email"
+        required
+      >
+      <button type="submit" id="btn-send" class="form__button">Enviar</button>
+    </div>
+  </div>
+
+  <p class="form__note">Gratis, sin suscripción. Te enviamos el acceso al instante.</p>
+</form>
+    </section>
+  </main>
+
+  <!-- PANTALLA DE ÉXITO -->
+  <div class="success" id="success-screen" role="status" aria-live="polite">
+    <img
+      class="success__gif"
+      id="success-gif"
+      data-src="./Moonwalk.gif"
+      alt="Moonwalk"
+    >
+    <div class="success__shade" aria-hidden="true"></div>
+
+    <div class="success__content">
+      <p class="success__badge">Listo</p>
+      <h2 class="success__title">¡Correo enviado!</h2>
+      <p class="success__text">
+        Revisa tu bandeja de entrada.<br>
+        Si no lo ves, mira también la carpeta de <strong>spam</strong>.
+      </p>
+    </div>
+  </div>
+
+  <!-- Conexión con el script externo -->
+  <script src="./script.js"></script>
+</body>
+</html>
