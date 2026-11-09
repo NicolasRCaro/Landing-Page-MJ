@@ -3,12 +3,21 @@
 // ==========================================
 (function () {
   emailjs.init({
-    publicKey: "FZ5MnISA1ILjLRyc_",
+    publicKey: "FZ5MnISA1ILjLRyc_", // Tu Public Key
   });
 })();
 
 // ==========================================
-// 2. CONMUTADOR DE ERAS & PRECARGA DE VIDEO
+// 2. MAPEO DE PLANTILLAS (2 TEMPLATES)
+// ==========================================
+const eraTemplateIDs = {
+  thriller: 'template_rc2blfp',   // Inserte aquí el ID de la plantilla Thriller (Rojo)
+  bad: 'template_spmbw9h',             // Inserte aquí el ID de la plantilla Bad (Blanco)
+  offthewall: 'TU_TEMPLATE_ID_THRILLER'  // Fallback: redirige Off The Wall a Thriller
+};
+
+// ==========================================
+// 3. CONMUTADOR DE ERAS & PRECARGA DE VIDEO
 // ==========================================
 const eraButtons = document.querySelectorAll('.era-btn');
 const bgVideo = document.getElementById('bg-video');
@@ -19,34 +28,26 @@ eraButtons.forEach((btn) => {
     const selectedEra = this.getAttribute('data-era');
     const videoSrc = this.getAttribute('data-video');
 
-    // Evita recargar si la era seleccionada ya está activa
     if (document.body.classList.contains(`era-${selectedEra}`)) return;
 
-    // Actualiza la clase activa en los botones
     eraButtons.forEach((b) => b.classList.remove('active'));
     this.classList.add('active');
 
-    // Muestra el loader e inicia desvanecimiento
     if (videoLoader) videoLoader.classList.add('is-loading');
     bgVideo.style.opacity = '0';
 
-    // Carga la nueva fuente del video
     bgVideo.src = videoSrc;
     bgVideo.load();
 
-    // Evento ejecutado solo cuando el video se ha precargado en memoria
     const handleCanPlay = () => {
       bgVideo.play().catch(() => {});
 
-      // Cambia los estilos CSS de la Era
       document.body.className = '';
       document.body.classList.add(`era-${selectedEra}`);
 
-      // Restaura la visibilidad y retira el loader
       bgVideo.style.opacity = '0.35';
       if (videoLoader) videoLoader.classList.remove('is-loading');
 
-      // Limpia el listener para el próximo cambio
       bgVideo.removeEventListener('canplaythrough', handleCanPlay);
     };
 
@@ -55,7 +56,7 @@ eraButtons.forEach((btn) => {
 });
 
 // ==========================================
-// 3. EXTRACCIÓN AUTOMÁTICA DEL NOMBRE
+// 4. EXTRACCIÓN AUTOMÁTICA DEL NOMBRE
 // ==========================================
 function extractNameFromEmail(email) {
   const username = email.split('@')[0];
@@ -67,7 +68,7 @@ function extractNameFromEmail(email) {
 }
 
 // ==========================================
-// 4. ENVÍO DE FORMULARIO Y PANTALLA DE ÉXITO
+// 5. ENVÍO DE FORMULARIO SEGÚN LA ERA ACTIVA
 // ==========================================
 const form = document.getElementById('email-form');
 const btnSend = document.getElementById('btn-send');
@@ -86,18 +87,24 @@ form.addEventListener('submit', function (event) {
   const emailInput = document.getElementById('user_email').value;
   const extractedName = extractNameFromEmail(emailInput);
 
+  // Identificar la era actual seleccionada en la web
+  const activeClass = Array.from(document.body.classList).find((c) => c.startsWith('era-'));
+  const currentEra = activeClass ? activeClass.replace('era-', '') : 'thriller';
+
+  // Seleccionar la plantilla según la era activa
+  const selectedTemplateID = eraTemplateIDs[currentEra] || eraTemplateIDs.thriller;
+
   btnSend.innerText = 'Enviando...';
   btnSend.disabled = true;
 
   const serviceID = 'service_4lmru1r';
-  const templateID = 'template_rc2blfp';
 
   const templateParams = {
     user_email: emailInput,
     user_name: extractedName,
   };
 
-  emailjs.send(serviceID, templateID, templateParams)
+  emailjs.send(serviceID, selectedTemplateID, templateParams)
     .then(() => {
       btnSend.innerText = 'Enviar';
       btnSend.disabled = false;
